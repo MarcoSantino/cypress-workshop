@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NoticeComponent } from './notice.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from 'src/app/redux/state';
 
 describe('NoticeComponent', () => {
   let component: NoticeComponent;
@@ -8,7 +10,10 @@ describe('NoticeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoticeComponent ]
+      declarations: [ NoticeComponent ],
+      imports: [
+        StoreModule.forRoot(reducers)
+      ]
     })
     .compileComponents();
   }));

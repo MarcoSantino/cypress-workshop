@@ -1,5 +1,5 @@
 <div class="container margin-top-header" *ngIf="profile$ | async as profile">
-    <div class="columns">
+    <div class="columns" *ngIf="!!profile">
         <ng-container *ngIf="!!profile.name">
             <div class="column is-one-quarter">
                 <app-card [profile]="profile"></app-card>

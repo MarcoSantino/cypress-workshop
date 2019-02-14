@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomepageComponent } from './homepage.component';
+import { CardComponent } from '../../shared/card/card.component';
+import { NoticeComponent } from '../../shared/notice/notice.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from '../../../redux/state';
 
 describe('HomepageComponent', () => {
   let component: HomepageComponent;
@@ -8,9 +12,16 @@ describe('HomepageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomepageComponent ]
+      declarations: [
+        HomepageComponent,
+        CardComponent,
+        NoticeComponent
+      ],
+      imports: [
+        StoreModule.forRoot(reducers)
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
