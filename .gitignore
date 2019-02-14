@@ -4,6 +4,8 @@
 /dist
 /tmp
 /out-tsc
+/e2e/screenshots
+/e2e/videos
 
 # dependencies
 /node_modules
