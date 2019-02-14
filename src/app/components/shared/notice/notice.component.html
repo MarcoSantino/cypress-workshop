@@ -1,0 +1,14 @@
+<div class="card notice" *ngIf="!!notice">
+  <h3 class="title">{{notice.title}}</h3>
+  <p class="description">{{notice.description}}</p>
+  <div class="columns">
+    <ng-container *ngIf="profile$ | async as profile">
+      <div class="column" *ngIf="!!profile.name">
+        <button class="button is-text" (click)="likePost()" [ngClass]="{'active': like}">Like</button>
+      </div>
+    </ng-container>
+    <div class="column">
+      <p class="author-date">{{notice.date | date:'d/M/y HH:mm'}} - {{notice.author}}</p>
+    </div>
+  </div>
+</div>

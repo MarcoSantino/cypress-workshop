@@ -1,0 +1,30 @@
+<header>
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-four-fifths">
+        <a [routerLink]="['/']"><img src="./assets/logo.jpeg"></a>
+      </div>
+      <div class="column has-text-right" *ngIf="profile$ | async as profile">
+        <button class="button is-light" *ngIf="!profile.name && !profile.lastName" (click)="goToLogin()">Login</button>
+        <div class="dropdown is-right" [ngClass]="{'is-active': dropdownOpen}" (click)="dropdownOpen = !dropdownOpen"
+          *ngIf="!!profile.name && !!profile.lastName">
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu6">
+              <span>{{profile.name}}</span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu6" role="menu">
+            <div class="dropdown-content">
+              <div class="dropdown-item" (click)="goToProfile()">
+                Profile
+              </div>
+              <div class="dropdown-item" (click)="logout()">
+                Logout
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,13 @@
+<div class="container margin-top-header" *ngIf="profile$ | async as profile">
+    <div class="columns">
+        <ng-container *ngIf="!!profile.name">
+            <div class="column is-one-quarter">
+                <app-card [profile]="profile"></app-card>
+            </div>
+        </ng-container>
+        <div class="column">
+            <h1>Feed</h1>
+            <app-notice *ngFor="let notice of notices" [notice]="notice"></app-notice>
+        </div>
+    </div>
+</div>

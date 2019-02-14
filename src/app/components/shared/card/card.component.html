@@ -1,0 +1,14 @@
+<div class="card profile">
+  <div class="card-header {{profile.gender}}"></div>
+  <div class="card-body">
+    <div class="profile-image">
+      <img [src]="profile.img" [alt]="profile.name">
+    </div>
+    <div class="data">
+      <h3 class="name">{{profile.name}} {{profile.lastName}}</h3>
+      <p class="website"><a [href]="profile.website">{{profile.website}}</a></p>
+      <p class="twitter">Twitter: <a href="http://twitter.com">{{profile.twitter}}</a></p>
+      <p class="facebook">Facebook: <a href="http://facebook.com">{{profile.facebook}}</a></p>
+    </div>
+  </div>
+</div>

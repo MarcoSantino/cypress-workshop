@@ -1,0 +1,44 @@
+<div class="container margin-top-header">
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <div class="card" *ngIf="profile$ | async as profile">
+        <div class="card-body">
+          <div class="columns">
+            <div class="column">
+              <label>Name</label>
+              <div>{{profile.name}}</div>
+            </div>
+            <div class="column">
+              <label>Last Name</label>
+              <div>{{profile.lastName}}</div>
+            </div>
+            <div class="column">
+              <label>Email</label>
+              <div>{{profile.mail}}</div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <label>Born Date</label>
+              <div>{{profile.bornDate | date:'d/M/y'}}</div>
+            </div>
+            <div class="column">
+              <label>Website</label>
+              <div><a [href]="profile.website">{{profile.website}}</a></div>
+            </div>
+            <div class="column">
+              <label>Twitter</label>
+              <div><a href="http://twitter.com">{{profile.twitter}}</a></div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <label>Facebook</label>
+              <div><a href="http://facebook.com">{{profile.facebook}}</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
